@@ -1,0 +1,19 @@
+{
+    "name": "radiants.IngameConsoleView",
+    "references": [
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:ebda3b476f441204e9697e8e40afa1ff",
+        "GUID:950eb604f81399f42adcdd6ae04161c4",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:d68e5e3f432367b4f9dd6f3719c52852"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
