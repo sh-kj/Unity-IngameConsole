@@ -7,11 +7,13 @@ namespace radiants.IngameConsole
 {
 	public class FrameRateDisplay : MonoBehaviour
 	{
+#pragma warning disable 0649
 		[SerializeField]
 		private SpriteDigits.SpriteDigitsFloat Digits;
 
 		[SerializeField]
 		private float MeanSeconds = 0.2f;
+#pragma warning restore 0649
 
 		private int MeanFrameCount
 		{ get; set; }
