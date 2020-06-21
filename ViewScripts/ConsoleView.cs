@@ -10,6 +10,7 @@ namespace radiants.IngameConsole
 {
 	public class ConsoleView : MonoBehaviour
 	{
+#pragma warning disable 0649
 		[SerializeField]
 		private TMP_Text Text;
 
@@ -19,11 +20,12 @@ namespace radiants.IngameConsole
 		[SerializeField]
 		private UnityEngine.UI.Button DisplayToggleButton;
 
-		private bool Display
-		{ get; set; } = true;
-
 		[SerializeField]
 		private GameObject[] DisplayObjects;
+#pragma warning restore 0649
+
+		private bool Display
+		{ get; set; } = true;
 
 		private CompositeDisposable Disposables = new CompositeDisposable();
 
