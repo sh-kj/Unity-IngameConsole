@@ -14,7 +14,13 @@ namespace radiants.IngameConsole
 		private static Subject<List<string>> LogUpdateSubject = new Subject<List<string>>();
 		public static IObservable<List<string>> LogUpdateAsObservable = LogUpdateSubject;
 
-		private static ICommandExecuter CommandExecuter = null;
+		private static CommandExecuter Executer = null;
+
+		public static void Initialize(Type commandType)
+		{
+			Executer = new CommandExecuter(commandType);
+		}
+
 
 		public static void Log(object o)
 		{
@@ -33,19 +39,14 @@ namespace radiants.IngameConsole
 			LogUpdateSubject.OnNext(LogList);
 		}
 
-		public static void SetCommandExecuter(ICommandExecuter exec)
-		{
-			CommandExecuter = exec;
-		}
-
 		public static void ExecuteCommand(string[] command)
 		{
-			CommandExecuter?.Execute(command);
+			Executer?.Execute(command);
 		}
-	}
 
-	public interface ICommandExecuter
-	{
-		void Execute(string[] command);
+		public static IEnumerable<string> GetAllCommands()
+		{
+			return Executer?.GetCommands();
+		}
 	}
 }

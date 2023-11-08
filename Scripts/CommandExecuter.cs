@@ -7,16 +7,14 @@ using System.Linq;
 
 namespace radiants.IngameConsole
 {
-	public class CommandExecuter : ICommandExecuter
+	public class CommandExecuter
 	{
-		private static readonly System.Type TypeOfCommands = typeof(ConsoleCommands);
-
 		private Dictionary<string, MethodInfo> CommandDictionary = new Dictionary<string, MethodInfo>();
 
-		public CommandExecuter()
+		public CommandExecuter(System.Type typeOfCommands)
 		{
 			//make command list using reflection
-			MethodInfo[] methods = TypeOfCommands.GetMethods()
+			MethodInfo[] methods = typeOfCommands.GetMethods()
 				.Where(_method =>
 				{
 					//only static Action(string[]) are command
@@ -51,7 +49,7 @@ namespace radiants.IngameConsole
 			}
 		}
 
-		void ICommandExecuter.Execute(string[] args)
+		public void Execute(string[] args)
 		{
 			if (args.Length == 0) return;
 
@@ -64,7 +62,7 @@ namespace radiants.IngameConsole
 			CommandDictionary[args[0]].Invoke(null, new object[] { args });
 		}
 
-		public IEnumerable<string> GetAllCommands()
+		public IEnumerable<string> GetCommands()
 		{
 			return CommandDictionary.Keys;
 		}
