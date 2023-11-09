@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Editing this script is not recommended
 namespace radiants.IngameConsole
 {
 	[DefaultExecutionOrder(-10000)]
@@ -8,9 +9,20 @@ namespace radiants.IngameConsole
 	{
 		private void Awake()
 		{
-			Console.Initialize(typeof(ConsoleCommands));
+			ConsoleCommands.Init();
 		}
 	}
 	
-	public static partial class ConsoleCommands{ }
+	public static partial class ConsoleCommands
+	{
+		//use static constructor to execute Console.Initialize once
+		static ConsoleCommands()
+		{
+			Console.Initialize(typeof(ConsoleCommands));
+		}
+		public static void Init()
+		{
+			//run static ctor if it didn't
+		}
+	}
 }

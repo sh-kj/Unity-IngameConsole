@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace radiants.IngameConsole
 {
-	//You can add command methods for this class.
-	//or, create partial class file to not edit this file/directory.
+	//You can add command methods for this script.
+	//or, create partial class file to not edit this file.
 	//command methods have to `public static void`, and must have `string[]` argument.
 	public static partial class ConsoleCommands
 	{
-
 		//enumrate all commands
 		[CommandName("list")]
 		public static void List(string[] _)
