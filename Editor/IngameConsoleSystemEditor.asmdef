@@ -1,0 +1,18 @@
+{
+    "name": "IngameConsoleSystemEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d68e5e3f432367b4f9dd6f3719c52852"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
