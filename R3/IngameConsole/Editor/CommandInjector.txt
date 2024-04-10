@@ -1,0 +1,28 @@
+﻿using UnityEngine;
+
+//Editing this script is not recommended
+namespace radiants.IngameConsole
+{
+	[DefaultExecutionOrder(-10000)]
+
+	public class CommandInjector : MonoBehaviour
+	{
+		private void Awake()
+		{
+			ConsoleCommands.Init();
+		}
+	}
+	
+	public static partial class ConsoleCommands
+	{
+		//use static constructor to execute Console.Initialize once
+		static ConsoleCommands()
+		{
+			Console.Initialize(typeof(ConsoleCommands));
+		}
+		public static void Init()
+		{
+			//run static ctor if it didn't
+		}
+	}
+}
