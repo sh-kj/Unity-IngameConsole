@@ -53,4 +53,4 @@ ConsoleCommandsクラスに`public static void SomeCommand(string[] args)` と�
 `Log()`でコンソールにログを出せます。
 
 GUI側は、`LogUpdateAsObservable` をsubscribeし、こちらの更新にしたがってGUIでログが流れるようにしてください。  
-テキストコマンドが打ち込まれた時は、コマンドをスペースでSplitして`Execute()`を呼び出してください。
+テキストコマンドが打ち込まれた時は`Command()`を呼び出してください。

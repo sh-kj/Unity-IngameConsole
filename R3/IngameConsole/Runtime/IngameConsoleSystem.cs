@@ -36,9 +36,16 @@ namespace radiants.IngameConsole
 			LogUpdateSubject.OnNext(LogList);
 		}
 
-		public static void ExecuteCommand(string[] command)
+		public static void Command(string command, bool logCommandText = true)
 		{
-			Executer?.Execute(command);
+			if (string.IsNullOrEmpty(command)) return;
+
+			if(logCommandText)
+				Log(command);
+
+			var split = command.Split(' ');
+
+			Executer?.Execute(split);
 		}
 
 		public static IEnumerable<string> GetAllCommands()
